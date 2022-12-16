@@ -7,7 +7,7 @@ pipeline {
                 expression { params.testCase == "TestCase1" }
             }
             steps {
-                sh 'mvn -Dtest=TestCase1 test'
+                sh './mvn -Dtest=TestCase1 test'
             }
         }
     }
