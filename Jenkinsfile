@@ -7,8 +7,7 @@ pipeline {
                 expression { params.testCase == "TestCase1" }
             }
             tools { 
-                maven 'MAVEN_HOME' 
-                jdk 'JAVA_HOME' 
+                maven 'maven-3.8.6'
             }
             steps {
                 sh 'mvn -Dtest=TestCase1 test'
