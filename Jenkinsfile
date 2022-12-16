@@ -6,7 +6,9 @@ pipeline {
             when {
                 expression { params.testCase == "TestCase1" }
             }
-            sh 'mvn -Dtest=TestCase1 test'
+            steps {
+                sh 'mvn -Dtest=TestCase1 test'
+            }
         }
     }
 }
