@@ -6,8 +6,12 @@ pipeline {
             when {
                 expression { params.testCase == "TestCase1" }
             }
+            tools { 
+                maven 'MAVEN_HOME' 
+                jdk 'JAVA_HOME' 
+            }
             steps {
-                sh './mvn -Dtest=TestCase1 test'
+                sh 'mvn -Dtest=TestCase1 test'
             }
         }
     }
