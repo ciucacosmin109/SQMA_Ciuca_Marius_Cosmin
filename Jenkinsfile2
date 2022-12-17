@@ -23,8 +23,7 @@ pipeline {
                 maven 'maven-3.8.6'
             }
             steps {
-                // TestCase3 was made to fail, so I will not include it
-                sh 'mvn -Dtest=TestCase1,TestCase2 test'
+                sh 'mvn -Dtest=TestCase1,TestCase2,TestCase3 test'
             }
         }
     }
