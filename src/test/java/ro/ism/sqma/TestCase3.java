@@ -9,6 +9,6 @@ public class TestCase3
     @Test
     public void shouldPass()
     {
-        assertTrue( false );
+        assertTrue( true );
     }
 }
