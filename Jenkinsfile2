@@ -18,12 +18,20 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        stage('Unit tests') {
+        stage('Critical unit tests') {
             tools { 
                 maven 'maven-3.8.6'
             }
             steps {
-                sh 'mvn -Dtest=TestCase1,TestCase2,TestCase3 test'
+                sh 'mvn -Dtest=TestCase3 test'
+            }
+        }
+        stage('All unit tests') {
+            tools { 
+                maven 'maven-3.8.6'
+            }
+            steps {
+                sh 'mvn test'
             }
         }
     }
