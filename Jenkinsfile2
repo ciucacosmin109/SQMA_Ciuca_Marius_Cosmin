@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') { 
+            tools { 
+                maven 'maven-3.8.6'
+            }
+            steps {
+                sh 'mvn compile'
+            }
+        }
+        stage('Create JAR') {
+            tools { 
+                maven 'maven-3.8.6'
+            }
+            steps {
+                sh 'mvn package'
+            }
+        }
+        stage('Unit tests') {
+            tools { 
+                maven 'maven-3.8.6'
+            }
+            steps {
+                // TestCase3 was made to fail, so I will not include it
+                sh 'mvn -Dtest=TestCase1,TestCase2 test'
+            }
+        }
+    }
+}
+
+
